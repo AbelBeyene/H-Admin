@@ -6,7 +6,7 @@ import Logout from "../pages/Logout";
 import logo from '../assets/logo.png';
 import user from '../assets/User.png';
 import control from '../assets/control.png';
-import Chart_fill from '../assets/Chart_fill.png'
+import dash from '../assets/dashb.png'
 
 
 const Dashboard = () => {
@@ -29,7 +29,7 @@ const Dashboard = () => {
   };
   const [open, setOpen] = useState(true);
   const Menus = [
-    { title: "Dashboard", src: "Chart_fill", path:"/dashboard" },
+    { title: "Dashboard", src: "dashb", path:"/dashboard" },
     // { title: "Export", src: "Chat" },
     // { title: "Logout", src: "User",   path:'/logout'},
     // { title: "Schedule ", src: "Calendar" },
@@ -77,8 +77,8 @@ const Dashboard = () => {
                 index === 0 && "bg-light-white"
               } `}
             >
-              <img src={`./src/assets/${Menu.src}.png`} />
-              {/* <img src="" alt="" /> */}
+              {/* <img src={`./src/assets/${Menu.src}.png`} /> */}
+              <img src={dash} alt="" />
               <span className={`${!open && "hidden"} origin-left duration-200 pl-2`}>
                 {Menu.title}
               </span>

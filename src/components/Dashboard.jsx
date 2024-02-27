@@ -78,7 +78,7 @@ const Dashboard = () => {
               } `}
             >
               {/* <img src={`./src/assets/${Menu.src}.png`} /> */}
-              <img src={dash} alt="" />
+              <img src={dash} alt="dashboardicon" />
               <span className={`${!open && "hidden"} origin-left duration-200 pl-2`}>
                 {Menu.title}
               </span>

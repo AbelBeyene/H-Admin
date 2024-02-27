@@ -23,7 +23,7 @@ const Table = () => {
         <div className="inline-block min-w-full py-2 sm:px-5 lg:px-8">
           <div className="overflow-x-auto">
             <table className="min-w-full text-left text-sm font-light">
-              <thead className="border-b font-medium dark:border-neutral-500">
+              <thead className="border-b bg-brightGreen text-white  font-medium dark:border-neutral-500">
                 <tr>
                   <th scope="col" className="px-6 py-4">ID</th>
                   <th scope="col" className="px-6 py-4">First Name</th>
@@ -40,7 +40,7 @@ const Table = () => {
                   <th scope="col" className="px-6 py-4">Cv</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody >
                 {tableData.map(row => (
                   <tr key={row.id} className="border-b dark:border-neutral-500">
                     <td className="whitespace-nowrap px-6 py-4 font-medium">{row.id}</td>
@@ -66,6 +66,22 @@ const Table = () => {
                 ))}
               </tbody>
             </table>
+            {/* <div className="flex ml-96 mt-4">
+        <button
+          className="mr-2 px-4 py-2 bg-blue-500 text-white rounded"
+          // onClick={prevPage}
+          // disabled={currentPage === 1}
+        >
+          Prev
+        </button>
+        <button
+          className="px-4 py-2 bg-blue-500 text-white rounded"
+          // onClick={nextPage}
+          // disabled={currentRows.length < pageSize}
+        >
+          Next
+        </button>
+      </div> */}
           </div>
         </div>
       </div>

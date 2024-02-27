@@ -3,6 +3,11 @@ import { useState,useHistory } from "react";
 import Table from '../pages/Table';
 import { Link } from "react-router-dom";
 import Logout from "../pages/Logout";
+import logo from '../assets/logo.png';
+import user from '../assets/User.png';
+import control from '../assets/control.png';
+import Chart_fill from '../assets/Chart_fill.png'
+
 
 const Dashboard = () => {
 
@@ -42,14 +47,14 @@ const Dashboard = () => {
         } bg-dark-purple h-screen p-4 ml-1 fixed   pt-8  duration-300`}
       >
         <img
-          src="./src/assets/control.png"
+          src={control}
           className={`absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple
            border-2 rounded-full  ${!open && "rotate-180"}`}
           onClick={() => setOpen(!open)}
         />
         <div className="flex gap-x-5 items-center">
           <img
-            src="./src/assets/logo.png"
+            src={logo}
             className={`cursor-pointer duration-500 ${
               open && "rotate-[360deg]"
             }`}
@@ -73,6 +78,7 @@ const Dashboard = () => {
               } `}
             >
               <img src={`./src/assets/${Menu.src}.png`} />
+              {/* <img src="" alt="" /> */}
               <span className={`${!open && "hidden"} origin-left duration-200 pl-2`}>
                 {Menu.title}
               </span>
@@ -88,7 +94,7 @@ const Dashboard = () => {
       className="flex mt-96 mx-auto rounded-md p-2 cursor-pointer hover:bg-red-500 text-gray-300 text-sm items-center"
       onClick={() => setShowLogoutConfirmation(true)}
     >
-     <img src={`./src/assets/user.png`} />
+     <img src={user} />
               <span className={`${!open && "hidden"} origin-left duration-200 pl-2`}>
                  Logout
                </span>

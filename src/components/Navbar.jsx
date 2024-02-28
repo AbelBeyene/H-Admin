@@ -1,16 +1,19 @@
 /* eslint-disable no-unused-vars */
 import { useState,useHistory } from "react";
-import Table from '../pages/Table';
-import { Link } from "react-router-dom";
+
+import { Link,useLocation } from "react-router-dom";
 import Logout from "../pages/Logout";
 import logo from '../assets/logo.png';
 import user from '../assets/User.png';
 import control from '../assets/control.png';
-import dash from '../assets/dashb.png'
+import dash from '../assets/dashb.png';
+import settingIcon from '../assets/Setting.png';
+import folderIcon from '../assets/Folder.png';
 
 
-const Dashboard = () => {
 
+const NavBar = ({children}) => {
+const location =useLocation();
   // const history = useHistory();
   const [showLogoutConfirmation, setShowLogoutConfirmation] = useState(false);
   
@@ -29,14 +32,14 @@ const Dashboard = () => {
   };
   const [open, setOpen] = useState(true);
   const Menus = [
-    { title: "Dashboard", src: "dashb", path:"/dashboard" },
-    // { title: "Export", src: "Chat" },
-    // { title: "Logout", src: "User",   path:'/logout'},
+    { title: "Dashboard", src: dash, path:"/dashboard" },
+    { title: "Export", src: folderIcon, path:"/export" },
+    { title: "Setting", src: settingIcon ,path:"/setting"},
     // { title: "Schedule ", src: "Calendar" },
     // { title: "Search", src: "Search" },
     // { title: "Analytics", src: "Chart" },
     // { title: "Files ", src: "Folder", gap: true },
-    // { title: "Setting", src: "Setting" },
+   
   ];
 
   return (
@@ -73,12 +76,11 @@ const Dashboard = () => {
             <li 
               key={index}
               className={`flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-gray-300 text-sm items-center 
-              ${Menu.gap ? "mt-9" : "mt-2"} ${
-                index === 0 && "bg-light-white"
+              ${Menu.gap ? "mt-9" : "mt-2"} ${location.pathname==Menu.path?"bg-light-white":""
               } `}
             >
               {/* <img src={`./src/assets/${Menu.src}.png`} /> */}
-              <img src={dash} alt="dashboardicon" />
+              <img src={Menu.src} />
               <span className={`${!open && "hidden"} origin-left duration-200 pl-2`}>
                 {Menu.title}
               </span>
@@ -91,7 +93,7 @@ const Dashboard = () => {
 
            <div className="logout-button-container">
     <button
-      className="flex mt-96 mx-auto rounded-md p-2 cursor-pointer hover:bg-red-500 text-gray-300 text-sm items-center"
+      className="flex mt-72 mx-auto rounded-md p-2 cursor-pointer hover:bg-red-500 text-gray-300 text-sm items-center"
       onClick={() => setShowLogoutConfirmation(true)}
     >
      <img src={user} />
@@ -110,9 +112,10 @@ const Dashboard = () => {
       </div>
       <div className={`h-screen flex-1 duration-300  p-7 ${open?"ml-52":"ml-20"}`}>
 
-            <Table/>
+            {children}
       </div>
     </div>
   );
+  
 };
-export default Dashboard;
+export default NavBar;

@@ -67,7 +67,7 @@ const location =useLocation();
               !open && "scale-0"
             }`}
           >
-           HULUM 
+          <span className="p-3"> HULUM </span>
           </h1>
         </div>
         <ul className="pt-4  ">

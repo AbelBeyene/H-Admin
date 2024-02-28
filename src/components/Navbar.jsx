@@ -67,7 +67,7 @@ const location =useLocation();
               !open && "scale-0"
             }`}
           >
-           HULUM Admin
+           HULUM 
           </h1>
         </div>
         <ul className="pt-4  ">

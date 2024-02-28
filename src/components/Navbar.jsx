@@ -55,7 +55,7 @@ const location =useLocation();
            border-2 rounded-full  ${!open && "rotate-180"}`}
           onClick={() => setOpen(!open)}
         />
-        <div className="flex gap-x-5 items-center">
+        <div className="flex gap-x-2 items-center">
           <img
             src={logo}
             className={`cursor-pointer duration-500 ${
@@ -67,7 +67,7 @@ const location =useLocation();
               !open && "scale-0"
             }`}
           >
-          <span className="p-3"> HULUM </span>
+          <span className="p-3 font-bold "> HULUM </span>
           </h1>
         </div>
         <ul className="pt-4  ">
